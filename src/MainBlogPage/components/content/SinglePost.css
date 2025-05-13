@@ -1,0 +1,302 @@
+/* src/MainBlogPage/components/content/SinglePost.css */
+
+.single-post-container {
+  padding: 0; /* Remove padding, header will handle it */
+}
+
+/* --- New Featured Header Styles --- */
+.single-post-header-featured {
+  position: relative; /* For overlay positioning */
+  height: 40vh; /* Adjust height as needed (e.g., 300px, 50vh) */
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end; /* Align content to bottom */
+  justify-content: center; /* Center content horizontally */
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem; /* Space below header */
+}
+
+.header-content-overlay {
+  width: 100%;
+  padding: 1.5rem 2rem; 
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); /* Bottom gradient */
+  box-sizing: border-box;
+}
+
+.header-content-overlay h1 {
+  font-size: 2.5em;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Text shadow for readability */
+}
+
+.header-meta {
+  font-size: 0.9em;
+  color: #e0e0e0; /* Lighter color for meta on dark background */
+  gap: 0.5rem 1rem;
+}
+
+.header-meta i {
+  /* Styles already defined in .single-post-meta i */
+}
+
+/* --- Main Content Area --- */
+.single-post-main-content {
+  padding: 0 1rem; /* Add padding to content area, not container */
+}
+
+/* --- Old Header (Remove or keep for non-featured posts?) --- */
+/* .single-post-header { ... } */
+/* .single-post-meta { ... } */
+
+.single-post-content {
+  line-height: 1.7;
+  font-size: 1.05em;
+  color: #333;
+  /* Add max-width for better readability on wide screens */
+  max-width: 75ch; /* Approx 75 characters wide */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Basic styling for elements likely within contentHtml */
+.single-post-content p {
+  margin-bottom: 1.2em;
+}
+
+.single-post-content h2 {
+  font-size: 1.8em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eee;
+}
+
+.single-post-content h3 {
+  font-size: 1.5em;
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+}
+
+.single-post-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.single-post-content a:hover {
+  text-decoration: underline;
+}
+
+.single-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 1em 0;
+}
+
+.single-post-content blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid #007bff;
+  background-color: #f8f9fa;
+  color: #555;
+}
+
+.single-post-content ul,
+.single-post-content ol {
+  margin-bottom: 1.2em;
+  padding-left: 2em;
+}
+
+.single-post-content li {
+  margin-bottom: 0.5em;
+}
+
+.single-post-content pre {
+  background-color: #2d2d2d; /* Dark background for code blocks */
+  color: #f8f8f2; /* Light text for code */
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  margin: 1.5em 0;
+}
+
+.single-post-content code {
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  font-size: 0.95em;
+  /* Inline code styling */
+  padding: 0.2em 0.4em;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  color: #c7254e; /* Example color for inline code */
+}
+
+.single-post-content pre code {
+  padding: 0;
+  background-color: transparent;
+  color: inherit; /* Inherit color from pre */
+  border-radius: 0;
+}
+
+/* --- New Footer Box Styles --- */
+.single-post-footer-box {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa; /* Light background */
+  border: 1px solid #e9ecef; /* Subtle border */
+  border-radius: 8px;
+  font-size: 0.9em;
+  color: #444;
+  line-height: 1.7;
+  max-width: 75ch; /* Match content width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.single-post-footer-box div {
+  margin-bottom: 0.7rem;
+}
+.single-post-footer-box div:last-child {
+  margin-bottom: 0;
+}
+
+.single-post-footer-box strong {
+  color: #222;
+  margin-right: 0.5em;
+}
+
+.single-post-footer-box a {
+  color: #007bff;
+  text-decoration: none;
+  /* Word break for long links */
+  word-break: break-all;
+}
+
+.single-post-footer-box a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure tags inside the footer box use the existing tag styles */
+.footer-tags a {
+  /* Inherits from .post-tags a */
+}
+
+/* Remove old footer meta styles if they were separate */
+/* .post-footer-meta { ... } */
+
+.post-not-found {
+  padding: 2rem;
+  text-align: center;
+  color: #777;
+}
+
+.single-post-meta {
+  font-size: 0.9em;
+  color: #777;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem; /* Vertical and horizontal gap */
+}
+
+.single-post-meta span {
+  display: flex;
+  align-items: center;
+}
+
+.single-post-meta i {
+  margin-right: 0.4em;
+  /* Placeholder icon styles */
+}
+
+.single-post-meta a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.single-post-meta a:hover {
+  text-decoration: underline;
+}
+
+.post-tags a {
+  display: inline-block;
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.2rem 0.6rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.post-tags a:hover {
+  background-color: #ced4da;
+}
+
+.social-share {
+ margin-top: 1rem;
+}
+
+.social-icon {
+ display: inline-block;
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ background-color: #ccc; /* Placeholder */
+ color: white;
+ text-align: center;
+ line-height: 30px;
+ margin-right: 0.5rem;
+ text-decoration: none;
+ font-weight: bold;
+ /* Add specific background colors */
+}
+.social-icon.fb { background-color: #3b5998; }
+.social-icon.tw { background-color: #1da1f2; }
+.social-icon.wa { background-color: #25d366; }
+.social-icon.rd { background-color: #ff4500; }
+
+/* Styles extracted from pasted HTML for post1 */
+.single-post-content h1 { /* Applied to the h1 within the content */
+  text-align: center;
+  color: #5c6bc0;
+  /* Consider if this should override the general h1 style or be more specific */
+  /* If there's already an h1 style in single-post-content, this might need adjustment */
+}
+
+/* .single-post-content p { styles are already defined in this file, review if changes are needed based on pasted content } */
+
+.single-post-content .emote { /* Class used in the pasted HTML */
+  font-style: normal;
+}
+
+/* Reviewing existing blockquote style in SinglePost.css:
+.single-post-content blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid #007bff;
+  background-color: #f8f9fa;
+  color: #555;
+}
+*/
+/* New/merged blockquote style for the pasted content. Adjust as needed. */
+.single-post-content blockquote { 
+  background: #eef0fb; /* Specific to pasted content */
+  border-left: 6px solid #5c6bc0; /* Specific to pasted content */
+  padding: 10px 15px; /* Slightly different from existing */
+  margin: 1.5em 0; /* Same as existing */
+  font-style: italic; /* New style from pasted content */
+  color: #555; /* Same as existing */
+}
+
+/* The h2 in the pasted HTML has an inline style: style="text-align:center; color: #444; margin-top: 2em;" */
+/* You might want to create a class for this if it's a recurring style, for example:
+.single-post-content h2.centered-subtitle {
+  text-align: center;
+  color: #444;
+  margin-top: 2em;
+}
+And then update the HTML to use <h2 class="centered-subtitle"> */ 

@@ -1,0 +1,10 @@
+/* src/App.css */
+.App {
+  /* 可以在这里设置整个应用的最小高度或全局字体等 */
+  /* text-align: center; */ /* 不一定需要全局居中 */
+  min-height: 100vh; /* 确保应用容器至少和视口一样高 */
+  display: flex; /* 使用 flex 布局可能有助于子路由撑开高度 */
+  flex-direction: column; /* 确保子元素垂直排列 */
+}
+
+/* 移除不再使用的 .App-header 等默认样式 */

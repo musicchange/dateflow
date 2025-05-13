@@ -1,0 +1,84 @@
+/* QuoteCard.css */
+.quote-card {
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.quote-title {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* Style for the link wrapping the title */
+.quote-title-link {
+  text-decoration: none;
+  color: #333;
+}
+.quote-title-link:hover .quote-title {
+  color: #3498db;
+}
+
+.quote-content {
+  margin: 0 0 15px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.quote-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px dashed #eee;
+  padding-top: 10px;
+}
+
+/* Style for the link wrapping the author */
+.quote-author-link {
+   text-decoration: none;
+   color: inherit; /* Inherit color from quote-meta */
+}
+.quote-author-link:hover .quote-author {
+   color: #2980b9;
+   text-decoration: underline; /* Add underline on hover for author */
+}
+
+.quote-author {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.quote-tags {
+  margin-left: auto; /* Push tags to the right */
+  padding-left: 15px;
+}
+
+/* Style for the link wrapping the tag */
+.quote-tag-link-card {
+  text-decoration: none;
+}
+
+.quote-tag {
+  display: inline-block;
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover effect on the link affects the tag span */
+.quote-tag-link-card:hover .quote-tag {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+} 

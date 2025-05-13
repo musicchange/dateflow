@@ -1,0 +1,207 @@
+:root {
+  --border-color: #e1e8ed;
+  --card-background: #ffffff;
+  --text-primary: #14171a;
+  --text-secondary: #657786;
+  --twitter-blue: #1DA1F2;
+  --selected-quote-bg: #eef4ff; /* Highlight background */
+  --connector-line-color: var(--border-color);
+  --button-action-color: var(--twitter-blue);
+  --background-hover: #f5f8fa;
+}
+
+/* Page wrapper - already set for full width and white background */
+.quote-detail-page.new-timeline-view {
+  padding: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--card-background, #fff);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Controls at the top (Back button, Sort button) */
+.page-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.back-button {
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+.back-button:hover {
+  background-color: var(--background-hover);
+}
+
+.thread-controls .sort-button-main {
+  padding: 8px 12px;
+  font-size: 0.9em;
+  background-color: var(--twitter-blue);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Individual quote item in the article/timeline */
+.quote-node.article-item {
+  position: relative; 
+  padding-left: 0; /* Align content to the left now */
+  margin-bottom: 0; 
+}
+
+/* Quote card itself */
+.quote-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 15px; 
+  padding: 12px 15px;
+  position: relative; 
+  z-index: 1;
+  margin-left: 0; /* Align card to the left now */
+}
+
+/* Target quote highlight */
+.quote-card.target-quote-highlight {
+  background-color: var(--selected-quote-bg) !important; 
+}
+
+.quote-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.quote-author-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.quote-author-avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* Avatar should be to the right of the main line */
+}
+
+.quote-author-name-small { font-size: 1em; }
+.quote-timestamp-link { text-decoration: none; }
+.quote-timestamp-small {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+
+.quote-text-detail {
+  font-size: 1em;
+  line-height: 1.5;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+}
+
+/* Actions for screenshot and link */
+.quote-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Space between buttons */
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.action-button {
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.action-button:hover {
+  background-color: var(--background-hover);
+  border-color: #c5cdd3;
+}
+
+.action-button.screenshot-button:hover,
+.action-button.link-button:hover {
+  color: var(--button-action-color);
+  border-color: var(--button-action-color);
+}
+
+/* Screenshot display area */
+.screenshot-display {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.screenshot-display img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+/* Loading and Error states */
+.quote-detail-loading,
+.quote-detail-error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1em;
+  color: var(--text-secondary);
+}
+
+/* ---- Cleanup of Old/Unused/Conflicting Styles ---- */
+/* Remove styles related to old timeline or nested replies if not needed */
+.timeline, .timeline-item, .timeline-item-dot, .timeline-item-line, /* Old timeline */
+.ancestor-node, .target-node, .reply-node, .nested-replies, /* Old conversation thread structure */
+.conversation-ancestors, .conversation-replies, /* Old containers */
+.parent-path-quote, /* Old class */
+.quote-node.depth-0, .quote-node.depth-1, .quote-node.depth-2, /* Old depth classes */
+.sort-button-replies, /* Old button */
+.toggle-replies-button /* Old button */
+{
+  /* Consider removing these selectors entirely if the classes are no longer in JS */
+  /* For now, ensure they don't interfere: */
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.ancestor-node::before, .target-node::before, .reply-node::before, .reply-node::after, 
+.nested-replies::before, .conversation-replies .quote-card::before, 
+.conversation-ancestors .quote-card:not(:first-child)::before,
+.conversation-ancestors + .target-quote::before,
+.conversation-replies > .reply-quote::before,
+.conversation-ancestors .quote-card:first-child::before,
+.conversation-ancestors:empty + .target-quote::before,
+.target-node:not(:has(.nested-replies .quote-node))::before, /* Old specific line attempts */
+.quote-node.article-item::before /* Also ensure this new one is covered if rules are broad */
+{
+  display: none !important; /* Hide all pseudo-elements for lines */
+}
+
+/* Keep general .quote-card related styles from earlier if they are still good (header, avatar, text etc.) */
+/* The new .quote-node.article-item and its ::before will handle the new line logic. */
+
+

@@ -1,0 +1,282 @@
+/* ByAuthor.css */
+.quotes-by-author {
+  display: flex;
+  gap: 30px; /* 作者列表和引用区域的间距 */
+}
+
+.author-list-container {
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+}
+
+.author-list {
+  max-height: 400px; /* 如果作者很多，可以限制高度并滚动 */
+  overflow-y: auto;
+  padding-right: 10px; /* 为滚动条留空间 */
+}
+
+.author-quotes-section {
+  flex: 3;
+}
+
+.sort-options {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.sort-options button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.sort-options button:hover {
+  background-color: #f0f0f0;
+}
+
+.sort-options button.active {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+  font-weight: bold;
+}
+
+.select-prompt {
+    flex: 3;
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .quotes-by-author {
+    flex-direction: column;
+  }
+  .author-list-container {
+     max-width: 100%;
+     margin-bottom: 20px;
+  }
+   .author-list {
+     max-height: 200px; /* 移动端减小高度 */
+   }
+   .select-prompt {
+       margin-top: 20px;
+       flex: unset;
+   }
+}
+
+.by-author-container {
+  display: flex;
+  gap: 20px; /* Space between columns */
+}
+
+.author-list-column {
+  flex: 0 0 25%; /* 修改为25% */
+  max-width: 25%; /* 修改为25% */
+  border-right: 1px solid #eee; /* Optional separator */
+  padding-right: 20px; /* Space before the border */
+  /* 确保列表本身可以滚动如果内容过多 */
+  max-height: calc(100vh - 150px); /* 示例高度，根据你的页头页脚调整 */
+  overflow-y: auto;
+}
+
+.author-details-column {
+  flex: 1 1 75%; /* 修改为75% */
+  min-width: 0; /* Prevents content overflow issues in flex items */
+}
+
+/* --- Styles for Author List (Left Column) --- */
+.author-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.author-list-item {
+  margin-bottom: 10px;
+}
+
+.author-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.author-link:hover,
+.author-list-item.active .author-link { /* Style for hovered and active (based on mouse hover state) */
+  background-color: #e9ecef;
+  color: #0056b3;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.author-name {
+  font-weight: 500;
+}
+
+/* --- Styles for Author Details (Right Column) - NEW LAYOUT --- */
+.author-details-placeholder {
+  color: #888;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.author-profile-card {
+  border: 1px solid #ddd; /* 示例边框 */
+  border-radius: 12px;
+  overflow: hidden; /* 确保圆角对内部元素生效 */
+  background-color: #fff;
+}
+
+.profile-background-image {
+  height: 200px; /* 背景图高度，你可以调整 */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* 用于可能的叠加内容，如果需要的话 */
+}
+
+.profile-header-section {
+  display: flex;
+  align-items: flex-end; /* 头像底部和社交图标对齐 */
+  padding: 0 20px;
+  margin-top: -50px; /* 让头像部分向上移动，叠加在背景图底部 */
+  position: relative; /* 使 z-index 生效 */
+  z-index: 2;
+}
+
+.profile-avatar-main {
+  width: 100px; /* 头像大小 */
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff; /* 白色边框，使其突出 */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.profile-social-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px; /* 调整与头像底部的对齐 */
+}
+
+.social-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #eee; /* 占位符背景 */
+  color: #333;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.social-icon:hover {
+  background-color: #ccc;
+}
+
+/* 你可以为特定社交媒体添加不同颜色 */
+.social-icon.twitter { background-color: #1DA1F2; color: white; }
+.social-icon.bilibili { background-color: #FB7299; color: white; }
+.social-icon.github { background-color: #333; color: white; }
+
+.profile-info-section {
+  padding: 20px;
+  padding-top: 10px; /* 因为头像区域上移，减少一些顶部内边距 */
+}
+
+.profile-name {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.profile-description {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* New Quotes List Styles */
+.author-quotes-list-new {
+  list-style: none;
+  padding: 0 20px 20px 20px; /* 在卡片内部留出边距 */
+  margin: 0;
+}
+
+.quote-card-item {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.2s ease;
+}
+
+.quote-card-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.quote-link {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.quote-text {
+  font-size: 1em;
+  color: #333;
+  margin: 0 0 10px 0;
+  line-height: 1.6;
+}
+
+.quote-timestamp {
+  display: block;
+  font-size: 0.8em;
+  color: #777;
+  text-align: right;
+}
+
+.no-quotes-message {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+}
+
+/* 移除旧的 .author-card, .author-card-avatar 等相关样式，因为它们被新布局取代 */
+/* 同时移除 .author-details-content h4, .author-quotes-list, .quote-item, .view-all-quotes-link 的旧样式 */
+.author-details-content h4, /* 旧标题 */
+.author-card, /* 旧卡片 */
+.author-card-avatar, /* 旧头像 */
+.author-card-desc, /* 旧描述 */
+.author-card-stats, /* 旧统计 */
+.author-website-button, /* 旧网站按钮 */
+.author-quotes-list, /* 旧言论列表容器 */
+.quote-item, /* 旧言论项 */
+.view-all-quotes-link /* 旧查看全部链接 */
+{
+  display: none !important; /* 强制隐藏旧样式，之后可以安全删除这些选择器 */
+} 

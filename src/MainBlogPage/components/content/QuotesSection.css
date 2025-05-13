@@ -1,0 +1,15 @@
+/* QuotesSection.css */
+
+/* Remove styles related to .quotes-sub-nav and its .sub-nav-link as navigation is moved */
+/* 
+.quotes-sub-nav { ... }
+.sub-nav-link { ... }
+.sub-nav-link:hover { ... }
+.sub-nav-link.active { ... }
+*/
+
+/* Keep styles for the content area if needed */
+.quotes-content {
+  /* margin-top: -1px; */ /* No longer needed */
+  padding-top: 20px; /* Adjust if necessary */
+} 

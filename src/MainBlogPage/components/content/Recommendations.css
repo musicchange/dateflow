@@ -1,0 +1,215 @@
+/* src/MainBlogPage/components/content/Recommendations.css */
+
+.recommendations-section {
+  padding: 2rem;
+  background-color: #f9f9f9; /* Light background for the whole section */
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.recommendations-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Increased margin */
+  color: #2c3e50; /* Darker, more refined color */
+  font-size: 2em; /* Slightly larger */
+  font-weight: 600; /* Bolder */
+}
+
+.recommendations-section > p {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #666;
+  font-size: 1.1em;
+}
+
+.rec-category {
+  margin-bottom: 3rem;
+}
+
+.rec-category h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem; /* Increased padding */
+  border-bottom: 2px solid #e0e0e0; /* Lighter border */
+  color: #34495e; /* Darker, more refined color */
+  font-size: 1.5em; /* Slightly larger */
+  font-weight: 500; /* Medium weight */
+}
+
+/* Basic styles for icon placeholders (replace with actual icons later) */
+.rec-category h3 i {
+  font-style: normal; /* Prevent italics if using <i> */
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  /* Add background/mask for icons here */
+  background-color: #ccc; /* Placeholder */
+  border-radius: 3px;
+  margin-right: 0.5rem; /* Ensure space even without gap */
+}
+/* TODO: Add specific icons */
+.icon-book::before { content: '📚'; font-size: 1.2em; margin-right: 0.5em; } /* Example using emoji */
+.icon-movie::before { content: '🎬'; font-size: 1.2em; margin-right: 0.5em; }
+.icon-website::before { content: '🌐'; font-size: 1.2em; margin-right: 0.5em; }
+.icon-blog::before { content: '📝'; font-size: 1.2em; margin-right: 0.5em; }
+.icon-music::before { content: '🎵'; font-size: 1.2em; margin-right: 0.5em; }
+
+
+.rec-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem; /* Gap between items */
+}
+
+/* Default grid for larger screens */
+.book-list, .movie-list, .music-list {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+}
+
+.website-list, .blog-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Slightly smaller items */
+}
+
+
+.rec-item {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Keep images contained */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent; /* Add transparent border for smooth transition */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Add border-color transition */
+}
+
+.rec-item:hover {
+    transform: translateY(-5px) scale(1.01); /* Add slight scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #ddd; /* Subtle border on hover */
+}
+
+/* Image Styles */
+.rec-image {
+  width: 100%;
+  height: 180px; /* Fixed height for consistency */
+  object-fit: cover; /* Cover the area, might crop */
+  display: block; /* Remove extra space below image */
+}
+
+.book-cover {
+    height: 220px; /* Books might have taller covers */
+    object-fit: contain; /* Show full cover, might leave whitespace */
+    background-color: #f0f0f0; /* Background for contain */
+}
+.album-cover {
+    height: 180px;
+    object-fit: cover;
+}
+.movie-poster {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* Info Section Styles */
+.rec-info {
+  padding: 1rem 1.2rem;
+  flex-grow: 1; /* Allow info to fill space */
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-title {
+  margin-top: 0;
+  margin-bottom: 0.6rem; /* Adjusted margin */
+  font-size: 1.2em;    /* Slightly larger */
+  font-weight: 600;    /* Bolder */
+  color: #2c3e50;
+}
+
+.rec-author, .rec-director, .rec-artist {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.rec-review, .rec-description {
+  font-size: 0.95em;
+  color: #555; /* Darkened color for better readability */
+  line-height: 1.6; /* Increased line-height for better readability */
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Website/Blog Specific Styles */
+.website-item, .blog-item {
+    padding: 1.2rem; /* Use padding instead of rec-info for simpler structure */
+}
+
+.website-item .rec-title, .blog-item .rec-title {
+    margin-bottom: 0.4rem;
+}
+.website-item .rec-description, .blog-item .rec-description {
+    margin-bottom: 1rem;
+}
+
+.rec-link {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+}
+.rec-link:hover .rec-title {
+    color: #007bff; /* Highlight title on hover */
+}
+
+.rec-external-link {
+  display: inline-block;
+  margin-top: auto; /* Push to bottom */
+  padding: 0.4rem 0.8rem; /* Slightly larger padding */
+  background-color: #e7f3ff;
+  color: #0056b3;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 600; /* Slightly bolder */
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; /* Add color and shadow transition */
+  align-self: flex-start; /* Align to start */
+}
+
+.rec-external-link:hover {
+  background-color: #007bff; /* Use primary blue on hover */
+  color: #fff; /* White text on hover */
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3); /* Add subtle shadow */
+}
+
+.rec-external-link span {
+    margin-left: 0.3em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recommendations-section {
+    padding: 1.5rem;
+  }
+  .rec-list {
+      gap: 1rem;
+  }
+  /* Stack items on smaller screens if needed, but auto-fit should handle most cases */
+  .book-list, .movie-list, .music-list, .website-list, .blog-list {
+       grid-template-columns: 1fr; /* Single column on very small screens */
+   }
+}
+
+@media (max-width: 480px) {
+    .recommendations-section {
+        padding: 1rem;
+    }
+    .rec-category h3 {
+        font-size: 1.3em;
+    }
+    .rec-title {
+        font-size: 1.1em;
+    }
+} 

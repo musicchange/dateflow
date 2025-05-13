@@ -1,0 +1,85 @@
+/* MainBlogPage.css */
+body {
+  background-color: #f4f5f7; /* Very light grey background for the page */
+  margin: 0; /* Ensure no default body margin */
+  font-family: sans-serif; /* Basic font setting */
+}
+
+.main-blog-page {
+  display: flex;
+  /* max-width: 1200px; */ /* Removing max-width for potentially wider layout */
+  width: 100%; /* Occupy full width */
+  margin: 0 auto; /* Keep centered horizontally if max-width is ever re-added */
+  min-height: 100vh; /* Ensure layout covers viewport height */
+  gap: 1.5rem; /* Adjust gap between columns (e.g., 24px) */
+  padding: 1.5rem; /* Add padding around the entire layout */
+  box-sizing: border-box;
+}
+
+.left-sidebar {
+  flex: 0 0 10%; /* Adjust to 10% */
+  /* min-width: 200px; */ /* Remove fixed min-width */
+  /* max-width: 250px; */ /* Remove fixed max-width */
+  /* background-color: #f8f9fa; */ /* Remove background or make it subtler */
+  padding: 1.5rem; /* Adjust padding */
+  border-radius: 10px; /* Slightly larger radius */
+  border: 1px solid #e9ecef; /* Subtle border instead of background */
+  background-color: #fff; /* Use white background for consistency */
+  height: fit-content; /* Default height, will be overridden by max-height + sticky */
+  box-sizing: border-box;
+  position: sticky; /* Make it sticky */
+  top: 1.5rem; /* Stick to top, considering page padding */
+  align-self: flex-start; /* Important for sticky to work correctly in a flex container */
+  max-height: calc(100vh - 3rem); /* Prevent sidebar from being taller than viewport minus padding */
+  overflow-y: auto; /* Allow internal scrolling if content overflows */
+}
+
+.main-content {
+  flex: 0 0 70%; /* Keep at 70% */
+  min-width: 0; /* Override default min-width for flex items */
+  background-color: #ffffff;
+  padding: 2rem; /* Increase padding */
+  border-radius: 10px; /* Match sidebar radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Softer, more diffused shadow */
+  box-sizing: border-box;
+}
+
+.right-sidebar {
+  flex: 0 0 20%; /* Adjust to 20% */
+  /* min-width: 200px; */ /* Remove fixed min-width */
+  /* max-width: 250px; */ /* Remove fixed max-width */
+  /* background-color: #f8f9fa; */ /* Remove background or make it subtler */
+  padding: 1.5rem; /* Adjust padding */
+  border-radius: 10px; /* Match other radius */
+  border: 1px solid #e9ecef; /* Subtle border */
+  background-color: #fff; /* Use white background */
+  height: fit-content; /* Default height */
+  box-sizing: border-box;
+  position: sticky; /* Make it sticky */
+  top: 1.5rem; /* Stick to top */
+  align-self: flex-start; /* Important for sticky */
+  max-height: calc(100vh - 3rem); /* Prevent sidebar from being taller than viewport minus padding */
+  overflow-y: auto; /* Allow internal scrolling */
+}
+
+/* 移动端适应：单列布局 */
+@media (max-width: 992px) { /* Adjust breakpoint for collapsing columns */
+  .main-blog-page {
+    flex-direction: column;
+    padding: 1rem; /* Adjust padding for mobile */
+    gap: 1rem; /* Adjust gap for mobile */
+  }
+  .left-sidebar, .right-sidebar, .main-content {
+    flex-basis: auto; /* Reset flex-basis */
+    width: 100%; /* Full width when stacked */
+    max-width: 100%;
+    min-width: unset;
+    margin-bottom: 1rem; /* Add bottom margin when stacked */
+  }
+  .left-sidebar:last-child, .right-sidebar:last-child, .main-content:last-child {
+      margin-bottom: 0;
+  }
+  .main-content {
+     padding: 1.5rem; /* Adjust padding for mobile */
+  }
+} 

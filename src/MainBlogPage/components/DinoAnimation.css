@@ -1,0 +1,83 @@
+.dino-game-container {
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc; /* Visual separator */
+  margin-bottom: 15px; /* Space below the animation */
+}
+
+.dino {
+  width: 40px; /* Adjust size */
+  height: 40px; /* Adjust size */
+  background-color: #666; /* Simple gray dino */
+  position: absolute;
+  bottom: 0;
+  left: 20px; /* Starting position */
+  /* 跳跃动画将通过添加 .jump 类来触发 */
+}
+
+.dino.jump {
+  animation: dino-jump 0.7s ease-out;
+}
+
+@keyframes dino-jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-60px); /* 跳跃高度 */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.obstacles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Max height of obstacles */
+  /* pointer-events: none; // 如果障碍物不需要交互 */
+}
+
+.cactus {
+  width: 20px; /* Adjust size */
+  height: 40px; /* 默认仙人掌高度，可以根据类型调整 */
+  background-color: green; /* Simple green cactus */
+  position: absolute;
+  bottom: 0;
+  /* 动画将从右侧开始，向左移动 */
+  right: -20px; /* 初始位置在容器右侧外部 */
+  animation-name: cactus-move;
+  animation-timing-function: linear;
+  /* animation-duration 由 JS 动态设置 */
+}
+
+/* 如果需要不同高度的仙人掌，可以添加更多类，例如：
+.cactus.short { height: 20px; }
+.cactus.tall { height: 40px; }
+*/
+
+@keyframes cactus-move {
+  0% {
+    transform: translateX(0); /* 相对于其初始 right:-20px 的位置 */
+  }
+  100% {
+    /* 移动整个容器宽度再加上仙人掌自身宽度，确保完全移出屏幕左侧 */
+    /* 这个值需要足够大，确保能移出。使用一个很大的负值。*/
+    /* 或者更精确地计算: calc(-100vw - 20px) 但这取决于容器是视口宽度 */
+    /* 这里我们使用一个足够大的固定值，确保能移出大多数容器 */
+    transform: translateX(-300px); /* 这个值可以根据你的容器最大宽度调整 */
+  }
+}
+
+.ground {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  bottom: -1px; /* Ensure it's flush with bottom border or slightly overlaps */
+  left: 0;
+} 

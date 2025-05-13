@@ -1,0 +1,34 @@
+/* src/MainBlogPage/components/sidebar/DinoAnimation.css */
+.dino-animation-container {
+  width: 100%; /* 宽度充满父容器 */
+  height: 100px; /* 动画区域高度，可以调整 */
+  /* background-color: #f0f0f0; */ /* 可选：背景色，方便调试 */
+  overflow: hidden; /* 隐藏超出容器的仙人掌 */
+  position: relative; /* 用于子元素绝对定位（如果需要）*/
+  border-bottom: 2px solid #666; /* 地面线 */
+  margin-top: 10px; /* 和上方标题的间距 */
+}
+
+.dino {
+  width: 40px; /* 小恐龙宽度 */
+  height: 40px; /* 小恐龙高度 */
+  background-color: #666; /* 暂时用深灰色方块表示 */
+  /* background-image: url('/path/to/dino-sprite.png'); */ /* 未来可以用雪碧图 */
+  /* background-size: cover; */
+  position: absolute;
+  bottom: 0; /* 初始在地面上 */
+  left: 20px; /* 初始在容器左侧 */
+  /* transform-origin: bottom left; */ /* 跳跃的基点 */
+}
+
+.cactus {
+  width: 20px; /* 仙人掌宽度 */
+  height: 40px; /* 仙人掌高度 */
+  background-color: #008000; /* 暂时用绿色方块表示 */
+  /* background-image: url('/path/to/cactus-sprite.png'); */ /* 未来可以用雪碧图 */
+  /* background-size: cover; */
+  position: absolute;
+  bottom: 0; /* 初始在地面上 */
+  /* right: -20px; */ /* 初始在容器右边外部, animejs会处理translateX */
+  /* transform-origin: bottom left; */ 
+} 

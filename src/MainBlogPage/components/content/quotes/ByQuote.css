@@ -1,0 +1,9 @@
+/* ByQuote.css */
+.quotes-by-quote {
+  /* 如果需要，可以在这里为 "按言论" 视图添加特定样式 */
+}
+ 
+.quote-list-full .quote-card {
+  /* 可以为这里的 QuoteCard 设置不同于 AuthorDetail 或 ByAuthor 页面的样式 */
+  /* 例如，可能需要调整边距或背景 */
+} 

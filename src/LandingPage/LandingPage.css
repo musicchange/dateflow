@@ -1,0 +1,122 @@
+/* LandingPage.css */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* 考虑使用渐变或高质量背景图提升饱满感 */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  align-items: center; /* 水平居中主要内容 */
+  justify-content: center; /* 垂直居中主要内容（如果内容不足一屏）*/
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.landing-header {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.random-sentence {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.landing-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 垂直居中主要元素 */
+  width: 100%;
+  max-width: 800px; /* 限制最大宽度 */
+}
+
+.welcome-container {
+  margin-bottom: 2rem; /* Space below welcome message */
+}
+
+.welcome-message {
+  font-size: 2.5em; /* Adjust size */
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Style the text within the TypeAnimation */
+.typewriter-text {
+  color: #2c3e50;
+}
+
+/* Ensure cursor color is skyblue */
+/* Try targeting the specific element structure react-type-animation might use */
+.typewriter-text span[data-testid="react-type-animation-cursor"],
+.typewriter-text .typed-cursor, /* Library's default class */
+.welcome-message span > span:last-of-type /* A more general structure guess */
+{
+  background-color: skyblue !important; 
+  color: skyblue !important; /* Some libraries use color */
+}
+
+.start-button {
+  padding: 0.8rem 2.5rem; /* Adjust padding for oval shape */
+  font-size: 1.2em;        /* Make text larger */
+  font-weight: bold;       /* Bolder text */
+  color: white;
+  background: linear-gradient(45deg, #007bff, #0056b3); /* Example gradient */
+  border: none;
+  border-radius: 50px;     /* Large radius for oval/pill shape */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  margin-top: 2rem; /* Add margin above the button */
+}
+
+.start-button:hover {
+  transform: translateY(-2px) scale(1.05); /* Lift and scale effect */
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+.landing-footer {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Optional: Responsive adjustments for landing page if needed */
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 2em;
+  }
+  .start-button {
+    padding: 0.7rem 2rem;
+    font-size: 1.1em;
+  }
+}
+
+.welcome-message .typewriter-text span {
+  /* Attempt to directly style the span that likely IS the cursor or contains it */
+}
+
+.welcome-message .typewriter-text .typed-cursor,
+.welcome-message .typewriter-text span[style*="animation: typedjsBlink"],
+.welcome-message .typewriter-text span[data-testid="react-type-animation-cursor"] /* If library uses this for testing/dev */
+{
+  color: skyblue !important; /* For pipe/text cursors */
+  background-color: skyblue !important; /* For block cursors, or if color doesn't work */
+  /* Ensure any default browser/library black color is overridden */
+}
+
+/* If the library uses a pseudo-element for the cursor (less common for this kind) */
+.typewriter-text::after {
+    /* content: '|'; /* Or whatever the cursor character is */
+    /* color: skyblue !important; */
+    /* animation: typedjsBlink 0.7s infinite; */ 
+} 

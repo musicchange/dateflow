@@ -1,0 +1,34 @@
+.right-sidebar .sidebar-section {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dino-game-section {
+  /* Styles for the dino game container */
+  padding: 10px; /* Adjust padding as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the game if it's smaller than the container */
+}
+
+.dino-game-section h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.1em;
+}
+
+/* Style for the game canvas itself - this is a guess, might need inspection */
+/* .dino-game-section canvas { */ /* 移除或注释掉这个针对旧组件的样式 */
+/*  max-width: 100%; */
+/*  height: auto; */ /* Maintain aspect ratio */
+/*  border: 1px solid #eee; */ /* Optional border around the game */
+/* } */
+
+.right-sidebar .sidebar-section h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.1em;
+} 

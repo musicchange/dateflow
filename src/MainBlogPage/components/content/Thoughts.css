@@ -1,0 +1,100 @@
+/* Thoughts.css */
+.thoughts-section {
+  /* 整个随想区域的容器样式 */
+}
+
+.thought-post {
+  background-color: #ffffff; /* 白色背景 */
+  border: 1px solid #e9ecef; /* 浅边框 */
+  padding: 25px 30px; 
+  margin-bottom: 30px; /* 文章间距 */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* 轻微阴影 */
+}
+
+.post-title {
+  margin: 0 0 10px 0;
+  font-size: 1.6rem; 
+  font-weight: 600;
+  color: #34495e;
+  /* 可以添加链接样式，如果标题需要跳转到单独页面 */
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #868e96; /* 灰色元信息 */
+  margin-bottom: 20px;
+}
+
+.post-content {
+  line-height: 1.7; /* 增加行高提高可读性 */
+  color: #495057; /* 正文颜色 */
+}
+
+.post-content p {
+  margin-bottom: 1em; /* 段落间距 */
+}
+
+.post-content h2 {
+  font-size: 1.4rem;
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #dee2e6;
+  color: #495057;
+}
+
+.post-content h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
+  color: #495057;
+}
+
+.post-content strong,
+.post-content b {
+  font-weight: 600;
+}
+
+.post-content em,
+.post-content i {
+  font-style: italic;
+}
+
+.post-content a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.post-content blockquote {
+  border-left: 3px solid #ced4da;
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  color: #6c757d;
+  background-color: #f8f9fa;
+}
+
+.post-content code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  background-color: #f1f3f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  background-color: #f1f3f5;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto; /* 代码块横向滚动 */
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.9em;
+} 
